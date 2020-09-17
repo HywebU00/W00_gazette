@@ -1,0 +1,199 @@
+@page {
+    margin: 0 .5cm; /*print邊界*/
+    size:A4; /*列印紙張大小*/
+}
+@media print {
+    %no-bg {
+        background: none;
+    }
+    orphans:4;
+    widows:2;
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid
+    }
+    h1+p, h2+p, h3+p {
+        page-break-before: avoid;
+    }
+    a {
+        page-break-inside: avoid
+    }
+    img {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+    table, blockquote {
+        page-break-inside: avoid;
+    }
+    ul, ol, dl {
+        page-break-before: avoid;
+    }
+    /* -------------------------------不需要列印的區塊，請放置於這----//*/
+    .fatfooter,
+    .accesskey,
+    .submenu {
+        display: none;
+    }
+    .divider{
+        display:none;
+    }
+    /* -------------------------------各別顯示設定----//*/
+    body {
+        background: transparent;
+        // font-size: 12pt;
+        float: none;
+        width: auto;
+        @extend %no-bg;
+        -webkit-print-color-adjust: exact;
+        margin: 0mm 5mm 5mm 5mm;
+    }
+    header {
+        height: 4cm;
+        border-bottom: 1px solid #666;
+        h1{
+            max-width:7cm;
+        }
+        border-top: none;
+    }
+    .wrapper {
+        width: auto;
+    }
+    .container {
+        margin: 0px auto;
+        max-width: 100% !important;
+        width: 100% !important;
+        @include gutter(0);
+    }
+    .cp {
+        @include gutter(0);
+    }
+    .innerpage {
+        margin-top: 0 !important;
+    }
+    .main,
+    .content {
+        font-size: 12pt;
+        padding-bottom:1cm;
+        p{
+            font-size: inherit;
+            margin-bottom: .2em;
+        }
+        width: 100% !important;
+        max-width: 100%;
+        box-shadow: none;
+        float: none;
+        // font-size: 12pt;
+        @include clearfix;
+        @extend %no-bg;
+        padding-top: 0px !important;
+        img {
+            &.float_left {
+                float: right;
+                max-width: 50%;
+                margin: 0px 1em 1em 0;
+            }
+            &.float_right {
+                float: right;
+                max-width: 50%;
+                margin: 0px 0 1em 1em;
+            }
+        }
+        a:link,
+        a:visited,
+        a {
+            background: transparent;
+            color: #222;
+            font-weight: bold;
+            text-decoration: underline;
+            text-align: left;
+            word-wrap: break-word;
+        }
+        p {
+            a {
+                word-wrap: break-word;
+            }
+            a[href^="http"]:after {
+                content: " ("attr(href) ")";
+                font-size: 90%;
+            }
+            a[href^="#"]:after {
+                display: none;
+            }
+        }
+        abbr[title]:after {
+            content: " ("attr(title) ")";
+        }
+        table {
+            background: #FFF;
+        }
+        li {
+            content: "» ";
+        }
+    }
+    /* 檔案下載*/
+    .file_download {
+        a {
+            display: block !important;
+            clear: both !important;
+            width: 100% !important;
+        }
+        .update,
+        .file_view {
+            float: none !important;
+            width: 30% !important;
+            display: inline-block !important;
+            margin-left: 3em;
+        }
+    }
+    *,
+    *:before,
+    *:after,
+    *:first-letter,
+    p:first-line,
+    div:first-line,
+    blockquote:first-line,
+    li:first-line {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    thead {
+        display: table-header-group;
+        /* 表格即使分頁也會顯示表頭 */
+    }
+    .lightbox_slider {
+        page-break-inside: avoid;
+        overflow: hidden;
+        height: 6cm;
+        .cp_slider {
+            text-align: center;
+            .slick-slide {
+                width: 30%;
+                height: 4cm;
+                display: inline-block;
+                background: #DEDEDE;
+                position: relative;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 100%;
+                    box-shadow: 0px 0px 0px 1px #ccc;
+                }
+                img {
+                    width: auto;
+                    height: auto;
+                    max-width: 100%;
+                    max-height: 4cm;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}

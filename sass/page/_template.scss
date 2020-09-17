@@ -1,0 +1,345 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    background: #F5F5F5;
+    @include screen('mobile') {
+        background: #FFF;
+    }
+}
+.gotoTop{
+    display:block;
+    width: 3rem;
+    line-height: 3rem;
+    height: 3rem;
+    font-weight:bold;
+    font-size:.875rem;
+    text-align: center;
+    background:rgba(0,0,0,.5);
+    color:#FFF;
+    white-space: nowrap;
+    border-radius:50%;
+    margin: 0 0 0 auto;
+    transition:.3s ease-out;
+    font-family: Lato, 'PingFang TC', 'Helvetica Neue', Helvetica, 微軟正黑體,
+                Arial, sans-serif;
+    &:hover,&:focus {
+        background:rgba(0,0,0,.5);
+        color:#FFF;
+    }
+
+}
+body {
+    &.noscroll {
+        position: static !important;
+        width: 100%;
+        height: 100%;
+        overflow: hidden !important;
+        overflow-y: hidden !important;
+        margin: 0;
+        padding: 0;
+    }
+}
+// 最外圍預設為100%
+.wrapper {
+    font-size: 16px;
+    width: 1000px;
+    margin: 0px auto;
+    overflow: hidden;
+    overflow-y: auto;
+    background: #FFF;
+    box-shadow:0px 0px 45px rgba(0,0,0,.1);
+    @include screen('mobile') {
+        background: #000;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+}
+header {
+    background: url(../images/header_bg.jpg) no-repeat right center #FFF;
+    height: 10em;
+    border-top: 8px solid #222;
+    padding-top: 1em;
+    position: relative;
+    h1 {
+        margin: 0;
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        max-width: 320px;
+        img {
+            width: 100%;
+        }
+    }
+    .slogan {
+        position: absolute;
+        top: 60%;
+        left: 32px;
+        font-size: 13px;
+        color: #555;
+    }
+    p {
+        position: absolute;
+        bottom: 0px;
+        left: 32px;
+        width: 80%;
+        font-weight:bold;
+        font-size: 15px;
+        color: darken($primaryColor,10);
+    }
+}
+footer {
+    background: #e0e0e0;
+    padding: 1em;
+    p {
+        font-size: .813rem;
+    }
+}
+.content {
+    background: #FFF;
+    min-height: 600px;
+    padding: 1rem 2rem;
+    font-size: .938rem;
+    padding-bottom: 3em;
+    color: #111;
+    font-family: "新細明體", serif;
+    * {
+        // outline: 1px solid red;
+    }
+    .divider{
+        font-family: Lato, 'PingFang TC', 'Helvetica Neue', Helvetica, 微軟正黑體,
+                Arial, sans-serif;
+    }
+    p {
+        &.attachment,&.bold{
+            font-family: Lato, 'PingFang TC', 'Helvetica Neue', Helvetica, 微軟正黑體,
+                Arial, sans-serif;
+                font-weight:bold;
+        }
+        margin-top: 0;
+        margin-bottom:.4em;
+        min-height: 1em;
+        display:block;
+        position: relative;
+        // outline:1px solid red;
+        span.title {
+            margin-right: 1em;
+            min-width:4em;
+            display:inline-block;
+            margin-left: 0;
+        }
+        span {
+            // margin-right: 1em;
+            // outline:1px solid green;
+        }
+        &.indent{
+            padding-left: 1em;
+        }
+        &.level_1{
+            padding-left: 6em;
+            span.num{
+                left:0em;
+                position: absolute;
+            }
+        }
+        &.level_2 {
+            margin-left: 8em;
+            span.num {
+                margin-right: 0;
+                width:6em;
+                position: absolute;
+                left: -6em;
+                text-align: right;
+            }
+        }
+        &.level_3 {
+            margin-left: 10em;
+            span.num {
+                width:6em;
+                margin-right: 0;
+                position: absolute;
+                left: -6em;
+                text-align: right;
+            }
+        }
+        &.level_4 {
+            padding-left: 12em;
+            span.num {
+                width:6em;
+                margin-right: 0;
+                position: absolute;
+                left: -6em;
+                text-align: right;
+            }
+        }
+    }
+    .information {
+        display: flex;
+        flex-flow: row nowrap;
+        margin-bottom: 15px;
+        .dept {
+            flex-grow: 0;
+            flex-shrink: 1;
+            flex-basis: 30%;
+            display: flex;
+            flex-flow: row wrap;
+            align-content: center;
+            margin-right: 1em;
+            .from {
+                flex-grow: 0;
+                flex-shrink: 1;
+                flex-basis: 5%;
+                margin-right: .5em;
+                span {
+                    display: block;
+                    width: 100%;
+                    white-space: nowrap;
+                }
+            }
+            .lin {
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-basis: auto;
+                display: flex;
+                align-content: center;
+                span {
+                    margin: auto 0;
+                }
+            }
+        }
+        .announcement {
+            flex-grow: 0;
+            flex-shrink: 1;
+            flex-basis: 40%;
+            span {
+                display: block;
+                white-space: nowrap;
+            }
+        }
+    }
+}
+// 整體共用container樣式，請注意首頁切版頁面的整齊
+.container {
+    padding: 0;
+    margin: 0 auto;
+    max-width: $container-max; //請看_variable.scss
+    @include gutter(3em);
+    @include screen('mobile') {
+        @include gutter(0);
+    }
+}
+.main {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 100px;
+    // 可先設定一個中央區塊最大寬，限制accesskey對齊
+    @include screen('tablet') {
+        padding-top: 60px;
+    }
+    h2 {
+        line-height: 1.25em;
+    }
+    &.small_size {
+        font-size: .938em;
+    }
+    &.large_size {
+        font-size: 1.125em;
+    }
+}
+////////////////////////////////////////////////////////////
+// 為了與首頁區隔，請在內頁加上innerpage ClassName
+.innerpage {
+    padding-top: 6em;
+    @include screen('tablet') {
+        padding-top: 60px;
+        background: #FFF;
+    }
+    >.container {
+        max-width: 100%;
+        @include gutter(0); //gutter 代表左右要留白
+        &>* {
+            max-width: $container-max;
+            margin: 0 auto;
+            @include gutter;
+        }
+    }
+    .inner_img, .feature_img {
+        height: 150px;
+        width: 100%;
+        margin-bottom: 1em;
+        @include screen('xs_mobile') {
+            height: 120px;
+        }
+        img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            @include screen('xs_mobile') {
+                height: 120px;
+            }
+        }
+    }
+    .feature_img {
+        height: 400px;
+        @include screen('xs_mobile') {
+            height: 400px;
+        }
+        img {
+            height: 400px;
+            @include screen('xs_mobile') {
+                height: 400px;
+            }
+        }
+    }
+    h2.title {
+        color: #222;
+        text-align: center;
+        font-weight: 600;
+        font-size: 3.75rem;
+        line-height: 1.2;
+        position: relative;
+        margin: .5em auto 1em;
+        a.collect {
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            margin-left: .5rem;
+            @include screen('xs_mobile') {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+            img {
+                width: 100%;
+            }
+        }
+        @include screen('mobile') {
+            font-size: 2.5rem;
+            width: 90%;
+            margin-bottom: 1rem;
+        }
+        &:before {
+            content: "";
+            width: 12px;
+            height: 1em;
+            transform: skew(-30deg);
+            background: $lightColor;
+            z-index: 0;
+            margin-right: .2em;
+            display: inline-block;
+        }
+        small {
+            display: block;
+            font-size: .875rem;
+            font-weight: normal;
+            margin: 1em auto;
+            line-height: 1.5;
+            color: #888;
+            max-width: 800px;
+            @include screen('mobile') {
+                font-size: .875rem;
+            }
+        }
+    }
+}

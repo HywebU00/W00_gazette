@@ -1,0 +1,416 @@
+.lp {
+    .road_search {
+        border-top: 1px solid #DDD;
+        border-bottom: 1px solid #DDD;
+        padding: 1em 0;
+        text-align: center;
+        @extend %clearfix;
+        form {
+            display: block;
+            margin: 0 auto;
+            select {
+                min-width: 200px;
+            }
+        }
+    }
+    .taiwan_map {
+        .map {
+            float: left;
+            width: 40%;
+            min-width: 450px;
+            height: 600px;
+            margin: 0 1em 1em 0;
+            position:relative;
+            @include screen('mobile') {
+                display: none;
+            }
+            .el{
+                position:absolute;
+                transition:.3s ease-out;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    position:absolute;
+                }
+                &.active{
+                    transform:translate(-10px,-10px);
+                    z-index: 2;
+                }
+            }
+            .taipei{
+                width: 30px;
+                height: 38px;
+                top:27px;
+                right: 61px;
+                z-index: 1;
+            }
+            .taipeicounty{
+                width: 119px;
+                height: 110px;
+                top:0px;
+                right: 6px;
+            }
+            .taoyuan{
+                width: 78px;
+                height: 92px;
+                top:33px;
+                right: 91px;
+            }
+            .hsinchucounty{
+                width: 79px;
+                height: 91px;
+                top:64px;
+                right: 101px;
+            }
+            .hsinchusi{
+                width: 19px;
+                height: 24px;
+                top:81px;
+                right: 165px;
+                z-index: 1;
+            }
+            .miaoli{
+                width: 103px;
+                height: 79px;
+                top:101px;
+                right: 122px;
+            }
+            .taichung{
+                width: 154px;
+                height: 87px;
+                top:143px;
+                right: 90px;
+            }
+            .changhwa{
+                width: 66px;
+                height: 72px;
+                top:192px;
+                right: 214px;
+            }
+            .nantuo{
+                width: 121px;
+                height: 142px;
+                top:182px;
+                right: 104px;
+            }
+            .yunlin{
+                width: 99px;
+                height: 59px;
+                top:253px;
+                right: 204px;
+            }
+            .chiayicounty{
+                width: 134px;
+                height: 73px;
+                top:290px;
+                right: 170px;
+            }
+            .chiayisi{
+                width: 24px;
+                height: 14px;
+                top:308px;
+                right: 235px;
+            }
+            .tainan{
+                width: 105px;
+                height: 95px;
+                top:328px;
+                right: 214px;
+            }
+            .kaoshiung{
+                width: 143px;
+                height: 177px;
+                top:319px;
+                right: 156px;
+            }
+            .pingtung{
+                width: 83px;
+                height: 174px;
+                top:422px;
+                right: 177px;
+            }
+            .keelung{
+                width: 23px;
+                height: 21px;
+                top:20px;
+                right: 46px;
+                z-index: 1;
+            }
+            .yilan{
+                width: 103px;
+                height: 120px;
+                top:50px;
+                right: 12px;
+                z-index: 1;
+            }
+            .hwalien{
+                width: 126px;
+                height: 224px;
+                top:159px;
+                right: 41px;
+            }
+            .taitung{
+                width: 123px;
+                height: 215px;
+                top:322px;
+                right: 85px;
+            }
+            .lienchian{
+                width:150px;
+                height: 150px;
+                top:0;
+                left:0;
+                border:1px solid #DDD;
+                background:#F1F1F1;
+                border-radius:.2em;
+                &.active{
+                    transform:translate(20px,-15px);
+                }
+                img{
+                    width:80%;
+                    height: 80%;
+                    left:10%;
+                    top:10%;
+                }
+            }
+            .kinmen{
+                width:150px;
+                height: 150px;
+                top:160px;
+                left:0;
+                border:1px solid #DDD;
+                background:#F1F1F1;
+                border-radius:.2em;
+                &.active{
+                    transform:translate(20px,-15px);
+                }
+                img{
+                    width:80%;
+                    height: 80%;
+                    left:10%;
+                    top:10%;
+                }
+            }
+            .penghu{
+                width:150px;
+                height: 150px;
+                top:320px;
+                left:0;
+                border:1px solid #DDD;
+                background:#F1F1F1;
+                border-radius:.2em;
+                &.active{
+                    transform:translate(20px,-15px);
+                }
+            }
+        }
+        .county_list {
+            overflow: hidden;
+            p {
+                margin: 0 0 1em;
+                text-align: left;
+                @include screen('xs_mobile') {
+                    text-align: center;
+                }
+            }
+            ul {
+                @include li-reset;
+                display: flex;
+                flex-flow: row wrap;
+                li {
+                    flex: 0 1 calc(100% / 3 - .5em);
+                    margin: 0 .25em .5em;
+                    a {
+                        display: block;
+                        padding: .75em .5em;
+                        background: #F1F1F1;
+                        color: #222;
+                        text-align: center;
+                        &:hover, &:focus {
+                            background: $primaryColor;
+                            color: #FFF;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    table {
+        td {
+            a {
+                @include aSetting_nocolor;
+            }
+            &.date {
+                text-align: center;
+                color: #666;
+                @include screen('mobile') {
+                    text-align: left;
+                }
+            }
+            &.num {
+                text-align: center;
+                color: #666;
+                @include screen('mobile') {
+                    text-align: left;
+                }
+            }
+        }
+    }
+    .list {
+        &>ul, ol {
+            list-style-type: none;
+            padding: 0;
+            border-top: 2px solid $primaryColor;
+            &>li {
+                padding: 1em 0;
+                border-bottom: 1px solid #DDD;
+                position: relative; // outline: 1px solid blue;
+                .tag {
+                    margin-left: 2em;
+                }
+                &>a {
+                    display: block;
+                    padding-left: 2em;
+                    position: relative;
+                    line-height: 1.45em;
+                    color: $color-word;
+                    &:hover {
+                        color: $aHover;
+                    }
+                    .num {
+                        width: 1.5em;
+                        text-align: right;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        &:after {
+                            content: ".";
+                            display: inline-block;
+                        }
+                    }
+                }
+                span.dept {
+                    display: inline-block;
+                    font-size: .938em;
+                    @include screen("mobile") {
+                        display: block;
+                    }
+                }
+                time {
+                    display: block;
+                    color: #AAA;
+                    font-size: .938em;
+                }
+            }
+        }
+    }
+}
+.album {
+    margin: 1em auto;
+    ul {
+        @include li-reset;
+        li {
+            @include make_col(3, 1);
+            @include screen('tablet') {
+                @include make_col(2, 1);
+            }
+            @include screen('xs_mobile') {
+                @include make_col(1, 1);
+            }
+            overflow: visible;
+            a {
+                display: block;
+            }
+            .caption {
+                position: relative;
+                height: 10rem;
+                padding-top: 1em;
+                width: 100%;
+                &:after {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 2rem;
+                    background: #F1F1F1;
+                    content: "";
+                    transition: .3s ease-out;
+                }
+                h3 {
+                    height: 3em;
+                    overflow: hidden;
+                    display: block;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    line-height: 1.4em;
+                    margin: 1.15rem 1rem 2rem;
+                }
+                .road {
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    font-size: .938rem;
+                    text-align: center;
+                    padding: 0rem 1em;
+                    height: 2rem;
+                    line-height: 2rem;
+                    z-index: 2;
+                    color: #333;
+                    background: #DADADA;
+                }
+                .county {
+                    position: absolute;
+                    left: 0em;
+                    top: 0em;
+                    font-size: .938rem;
+                    width: 5em;
+                    height: 2em;
+                    padding: .25em 1em;
+                    text-align: center;
+                    background: $color-orange;
+                    color: #FFF;
+                }
+                .collect {
+                    position: absolute;
+                    top: 4px;
+                    right: 8px;
+                    width: 20px;
+                    height: 20px;
+                    background: url(../images/icon_collect.svg) no-repeat center center;
+                    background-size: contain;
+                    font-size: 0;
+                    display: block;
+                    &.active {
+                        background: url(../images/icon_collect_active.svg) no-repeat center center;
+                        background-size: contain;
+                    }
+                }
+            }
+            .thumbnail {
+                width: 100%;
+                max-width: 90%;
+                margin: 0 auto 1em;
+                a {
+                    &:hover, &:focus {
+                        .img-container {
+                            img {
+                                opacity: 1;
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+                }
+                .img-container {
+                    margin-bottom: 0;
+                    background: #000;
+                    img {
+                        transition: .3s ease-out;
+                        opacity: .85;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+}
