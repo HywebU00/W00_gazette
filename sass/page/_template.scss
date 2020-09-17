@@ -193,6 +193,8 @@ footer {
                 flex-basis: 15%;
                 min-width:15%;
                 margin-right: .5em;
+                display:flex;
+                flex-flow:row wrap;
                 span {
                     display: block;
                     width: 100%;
