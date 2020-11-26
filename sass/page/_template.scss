@@ -136,6 +136,16 @@ footer {
         &.indent{
             padding-left: 1em;
         }
+        &.level_0{
+            padding-left: 0em;
+            span.num{
+                left:0em;
+                position: absolute;
+            }
+            &~.level_1{
+                padding-left:2em;
+            }
+        }
         &.level_1{
             padding-left: 6em;
             span.num{

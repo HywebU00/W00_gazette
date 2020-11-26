@@ -1,6 +1,6 @@
 @page {
-    margin: 0 .5cm; /*print邊界*/
-    size:A4; /*列印紙張大小*/
+    margin: 0; /*print邊界*/
+    size:A4 portrait; /*列印紙張大小*/
 }
 @media print {
     %no-bg {
@@ -27,6 +27,9 @@
     }
     ul, ol, dl {
         page-break-before: avoid;
+    }
+    header,footer,.gotoTop{
+        display:none;
     }
     /* -------------------------------不需要列印的區塊，請放置於這----//*/
     .fatfooter,
@@ -104,7 +107,7 @@
             background: transparent;
             color: #222;
             font-weight: bold;
-            text-decoration: underline;
+            text-decoration: none !important;
             text-align: left;
             word-wrap: break-word;
         }
@@ -129,6 +132,9 @@
         li {
             content: "» ";
         }
+    }
+    .content{
+        padding: 0;
     }
     /* 檔案下載*/
     .file_download {

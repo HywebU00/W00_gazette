@@ -15,10 +15,6 @@ table {
         a {
             word-break: break-all;
         }
-        p {
-        &.level_1{
-            text-indent: -4em;
-        }
 
         }
     }
@@ -35,7 +31,6 @@ table {
                 width: 100%;
             }
         }
-    }
     &.table_hover {
         tr:hover {
             background: #F3F3F3;
