@@ -1,6 +1,8 @@
 @page {
-    margin: 0; /*print邊界*/
-    size:A4 portrait; /*列印紙張大小*/
+    margin: 0;
+    /*print邊界*/
+    size: A4 portrait;
+    /*列印紙張大小*/
 }
 @media print {
     %no-bg {
@@ -28,8 +30,8 @@
     ul, ol, dl {
         page-break-before: avoid;
     }
-    header,footer,.gotoTop{
-        display:none;
+    header, footer, .gotoTop {
+        display: none;
     }
     /* -------------------------------不需要列印的區塊，請放置於這----//*/
     .fatfooter,
@@ -37,8 +39,8 @@
     .submenu {
         display: none;
     }
-    .divider{
-        display:none;
+    .divider {
+        display: none;
     }
     /* -------------------------------各別顯示設定----//*/
     body {
@@ -53,8 +55,8 @@
     header {
         height: 4cm;
         border-bottom: 1px solid #666;
-        h1{
-            max-width:7cm;
+        h1 {
+            max-width: 7cm;
         }
         border-top: none;
     }
@@ -76,8 +78,8 @@
     .main,
     .content {
         font-size: 12pt;
-        padding-bottom:1cm;
-        p{
+        padding-bottom: 1cm;
+        p {
             font-size: inherit;
             margin-bottom: .2em;
         }
@@ -133,8 +135,53 @@
             content: "» ";
         }
     }
-    .content{
+    .content {
         padding: 0;
+    }
+    .list {
+        ul {
+            li {
+                padding-right: 150px;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                &>span {
+                    background: #FFF !important;
+                    display:inline;
+                }
+                em {
+                    background: #DDD !important;
+                }
+                .page {
+                    left: auto;
+                    right: 0;
+                    background: #FFF !important;
+                    span {
+                        position: relative;
+                        z-index: 2;
+                        padding: 0 1em;
+                        right: -100px;
+                        width:10em;
+                        background: #FFF !important;
+                        font-weight: bold;
+                        letter-spacing: .05em;
+                    }
+                    &:before {
+                        position: absolute;
+                        right: -20em;
+                        bottom: .2em;
+                        z-index: 0;
+                        white-space: nowrap;
+                        letter-spacing: .25em;
+                        max-width: 45em;
+                        left: auto;
+                        overflow: hidden;
+                        display: block;
+                        content: ".................................................................................................................................................";
+                    }
+                }
+            }
+        }
     }
     /* 檔案下載*/
     .file_download {

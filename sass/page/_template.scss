@@ -8,27 +8,26 @@ html {
         background: #FFF;
     }
 }
-.gotoTop{
-    display:block;
+.gotoTop {
+    display: block;
     width: 3rem;
     line-height: 3rem;
     height: 3rem;
-    font-weight:bold;
-    font-size:.875rem;
+    font-weight: bold;
+    font-size: .875rem;
     text-align: center;
-    background:rgba(0,0,0,.5);
-    color:#FFF;
+    background: rgba(0, 0, 0, .5);
+    color: #FFF;
     white-space: nowrap;
-    border-radius:50%;
+    border-radius: 50%;
     margin: 0 0 0 auto;
-    transition:.3s ease-out;
+    transition: .3s ease-out;
     font-family: Lato, 'PingFang TC', 'Helvetica Neue', Helvetica, 微軟正黑體,
-                Arial, sans-serif;
-    &:hover,&:focus {
-        background:rgba(0,0,0,.5);
-        color:#FFF;
+        Arial, sans-serif;
+    &:hover, &:focus {
+        background: rgba(0, 0, 0, .5);
+        color: #FFF;
     }
-
 }
 body {
     &.noscroll {
@@ -49,7 +48,7 @@ body {
     overflow: hidden;
     overflow-y: auto;
     background: #FFF;
-    box-shadow:0px 0px 45px rgba(0,0,0,.1);
+    box-shadow: 0px 0px 45px rgba(0, 0, 0, .1);
     @include screen('mobile') {
         background: #000;
         overflow: hidden;
@@ -84,9 +83,9 @@ header {
         bottom: 0px;
         left: 32px;
         width: 80%;
-        font-weight:bold;
+        font-weight: bold;
         font-size: 15px;
-        color: darken($primaryColor,10);
+        color: darken($primaryColor, 10);
     }
 }
 footer {
@@ -107,15 +106,15 @@ footer {
     * {
         // outline: 1px solid red;
     }
-    .divider{
+    .divider {
         font-family: Lato, 'PingFang TC', 'Helvetica Neue', Helvetica, 微軟正黑體,
-                Arial, sans-serif;
+            Arial, sans-serif;
     }
     p {
-        &.attachment,&.bold{
+        &.attachment, &.bold {
             font-family: Lato, 'PingFang TC', 'Helvetica Neue', Helvetica, 微軟正黑體,
                 Arial, sans-serif;
-                font-weight:bold;
+            font-weight: bold;
         }
         margin-top: 0;
         margin-bottom:.4em;
@@ -125,31 +124,31 @@ footer {
         // outline:1px solid red;
         span.title {
             margin-right: 1em;
-            min-width:4em;
-            display:inline-block;
+            min-width: 4em;
+            display: inline-block;
             margin-left: 0;
         }
         span {
             // margin-right: 1em;
             // outline:1px solid green;
         }
-        &.indent{
+        &.indent {
             padding-left: 1em;
         }
-        &.level_0{
+        &.level_0 {
             padding-left: 0em;
-            span.num{
-                left:0em;
+            span.num {
+                left: 0em;
                 position: absolute;
             }
-            &~.level_1{
-                padding-left:2em;
+            &~.level_1 {
+                padding-left: 2em;
             }
         }
-        &.level_1{
+        &.level_1 {
             padding-left: 6em;
-            span.num{
-                left:0em;
+            span.num {
+                left: 0em;
                 position: absolute;
             }
         }
@@ -157,7 +156,7 @@ footer {
             margin-left: 8em;
             span.num {
                 margin-right: 0;
-                width:6em;
+                width: 6em;
                 position: absolute;
                 left: -6em;
                 text-align: right;
@@ -166,7 +165,7 @@ footer {
         &.level_3 {
             margin-left: 10em;
             span.num {
-                width:6em;
+                width: 6em;
                 margin-right: 0;
                 position: absolute;
                 left: -6em;
@@ -176,7 +175,7 @@ footer {
         &.level_4 {
             padding-left: 12em;
             span.num {
-                width:6em;
+                width: 6em;
                 margin-right: 0;
                 position: absolute;
                 left: -6em;
@@ -201,10 +200,10 @@ footer {
                 flex-grow: 0;
                 flex-shrink: 1;
                 flex-basis: 15%;
-                min-width:15%;
+                min-width: 15%;
                 margin-right: .5em;
-                display:flex;
-                flex-flow:row wrap;
+                display: flex;
+                flex-flow: row wrap;
                 span {
                     display: block;
                     width: 100%;
@@ -215,7 +214,7 @@ footer {
                 flex-grow: 1;
                 flex-shrink: 1;
                 flex-basis: auto;
-                min-width:10%;
+                min-width: 10%;
                 display: flex;
                 align-content: center;
                 span {
@@ -227,7 +226,7 @@ footer {
             flex-grow: 0;
             flex-shrink: 1;
             flex-basis: 40%;
-            min-width:40%;
+            min-width: 40%;
             span {
                 display: block;
                 white-space: nowrap;
@@ -355,6 +354,143 @@ footer {
             max-width: 800px;
             @include screen('mobile') {
                 font-size: .875rem;
+            }
+        }
+    }
+}
+// 目錄
+.list {
+    font-family: serif, PMingLiU, 新細明體;
+    margin: 3em;
+    display: block;
+    overflow:hidden;
+    padding-bottom: 2em;
+    h2 {
+        font-size:2em;
+    }
+    h3{
+        font-size:1.5rem;
+    }
+    ul {
+        padding-left: 0;
+        li {
+            display: block;
+            position: relative;
+            padding-right: 200px;
+            text-indent: -6em;
+            padding-left: 6em;
+            margin-bottom: .5em;
+            &>span {
+                background: #FFF;
+                position: relative;
+                z-index: 2;
+                em{
+                    vertical-align:middle;
+                    background:#DDD;
+                    font-style:normal;
+                    position: relative;
+                    top:-.1em;
+                }
+                &:after {
+                    content: "";
+                    display: inline-block;
+                    margin-left: 1em;
+                }
+            }
+            .page {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                background: #FFF;
+                span {
+                    position: relative;
+                    z-index: 2;
+                    padding: 0 1em;
+                    background:#FFF;
+                    font-weight:bold;
+                    letter-spacing:.05em;
+                }
+                &:before {
+                    position: absolute;
+                    z-index:1;
+                    right: 3em;
+                    bottom: .2em;
+                    z-index: 0;
+                    white-space: nowrap;
+                    letter-spacing: .25em;
+                    max-width:45em;
+                    overflow:hidden;
+                    display:block;
+                    content: ".................................................................................................................................................";
+                }
+            }
+        }
+    }
+    .head {
+        padding: .5em 0;
+        border: 2px solid #000;
+        border-left: none;
+        border-right: none;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        h2 {
+            width: 250px;
+            flex: 0 1 250px;
+            flex-basis: 250px;
+            font-size: 2rem;
+            margin: .5em 0;
+            text-align: justify;
+            text-align-last: justify;
+            :after {
+                content: '';
+                width: 100%;
+                display: inline-block;
+            }
+        }
+        .periodical {
+            width: 250px;
+            flex: 0 1 250px;
+            flex-basis: 250px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            font-size: 1.25rem;
+            font-weight: bold;
+            align-items: center;
+            .catelog {
+                flex: 0 1 40%;
+                width: 40%;
+                flex-basis: 40%;
+                padding: .25em 0;
+                text-align: left;
+                span {
+                    display: inline-block;
+                    margin: 0 .5em;
+                }
+            }
+            .number {
+                flex: 0 1 40%;
+                width: 40%;
+                flex-basis: 40%;
+                padding: .25em 0;
+                text-align: right;
+                span {
+                    margin: 0 .5em;
+                }
+            }
+            .date {
+                flex: 0 1 100%;
+                width: 100%;
+                flex-basis: 100%;
+                padding: .25em 0;
+                text-align: justify;
+                text-align-last: justify;
+                span {
+                    display: inline-block;
+                    margin: 0 .25em;
+                    height: 1em;
+                }
             }
         }
     }
