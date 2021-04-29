@@ -1,8 +1,6 @@
 @page {
-    margin: 0;
-    /*print邊界*/
-    size: A4 portrait;
-    /*列印紙張大小*/
+  margin: 2cm; /*print邊界*/
+    size:210mm 148mm; /*列印紙張大小*/
 }
 @media print {
     %no-bg {
@@ -77,7 +75,7 @@
     }
     .main,
     .content {
-        font-size: 12pt;
+        font-size: 14pt;
         padding-bottom: 1cm;
         p {
             font-size: inherit;
