@@ -1,4 +1,4 @@
-$gutterWidth:1.85em;
+$gutterWidth:3em;
 * {
     box-sizing: border-box;
 }
@@ -165,130 +165,92 @@ footer {
             padding-left:$gutterWidth;
         }
         &.level_0 {
-            text-indent: -1*$gutterWidth;
-            padding-left: 1*$gutterWidth;
             span.num {
                 flex-grow: 0;
                 flex-shrink: 0;
-                flex-basis: 4em;
+                flex-basis: auto;
                 white-space: nowrap;
                 align-self: flex-start;
             }
             &~.level_1 {
-                padding-left: 1*$gutterWidth;
             }
         }
         &.level_1 {
-            text-indent: -1*$gutterWidth;
-            padding-left: 1*$gutterWidth;
             margin-left: 1*$gutterWidth;
             span.num {
                 flex-grow: 0;
                 flex-shrink: 0;
                 flex-basis: auto;
-                margin-right: .5em;
                 white-space: nowrap;
                 align-self: flex-start;
-                ~.p_content{
-                    margin-left: 1*$gutterWidth;
-                }
+
 
             }
         }
         &.level_2 {
-            text-indent: -1*$gutterWidth;
-            padding-left: 1*$gutterWidth;
-            margin-left: 2*$gutterWidth;
+            margin-left: $gutterWidth + 2.5em;
             span.num {
                 flex-grow: 0;
                 flex-shrink: 0;
                 flex-basis: auto;
-                margin-right: .5em;
                 white-space: nowrap;
                 align-self: flex-start;
-                ~.p_content{
-                    margin-left: 1*$gutterWidth;
-                }
+
             }
         }
         &.level_3 {
-            text-indent: -1*$gutterWidth;
-            padding-left: 1*$gutterWidth;
-            margin-left: 3*$gutterWidth;
+            margin-left: $gutterWidth + 5em;
             span.num {
                 flex-grow: 0;
                 flex-shrink: 0;
                 flex-basis: auto;
-                margin-right: .5em;
                 white-space: nowrap;
                 align-self: flex-start;
-                ~.p_content{
-                    margin-left: 1*$gutterWidth;
-                }
+
             }
         }
         &.level_4 {
-            text-indent: -1*$gutterWidth;
-            padding-left: 1*$gutterWidth;
-            margin-left: 4*$gutterWidth;
+            margin-left: $gutterWidth + 7.5em;
             span.num {
                 flex-grow: 0;
                 flex-shrink: 0;
                 flex-basis: auto;
-                margin-right: .5em;
                 white-space: nowrap;
                 align-self: flex-start;
-                ~.p_content{
-                    margin-left: 1*$gutterWidth;
-                }
+
             }
         }
         &.level_5 {
-            text-indent: -1*$gutterWidth;
-            padding-left: 1*$gutterWidth;
-            margin-left: 5*$gutterWidth;
+            margin-left: $gutterWidth + 10em;
             span.num {
                 flex-grow: 0;
                 flex-shrink: 0;
                 flex-basis: auto;
-                margin-right: .5em;
                 white-space: nowrap;
                 align-self: flex-start;
-                ~.p_content{
-                    margin-left: 1*$gutterWidth;
-                }
+
             }
         }
         &.level_6 {
-            text-indent: -1*$gutterWidth;
-            padding-left: 1*$gutterWidth;
-            margin-left: 6*$gutterWidth;
+            margin-left: $gutterWidth + 12.5em;
             span.num {
                 flex-grow: 0;
                 flex-shrink: 0;
                 flex-basis: auto;
-                margin-right: .5em;
                 white-space: nowrap;
                 align-self: flex-start;
-                ~.p_content{
-                    margin-left: 1*$gutterWidth;
-                }
+
             }
         }
         &.level_7 {
-            text-indent: -1*$gutterWidth;
-            padding-left: 1*$gutterWidth;
-            margin-left: 7*$gutterWidth;
+            margin-left: $gutterWidth + 15em;
             span.num {
                 flex-grow: 0;
                 flex-shrink: 0;
                 flex-basis: auto;
-                margin-right: .5em;
                 white-space: nowrap;
                 align-self: flex-start;
-                ~.p_content{
-                    margin-left: 1*$gutterWidth;
-                }
+
             }
         }
     }
