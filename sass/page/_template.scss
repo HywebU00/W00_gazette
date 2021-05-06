@@ -105,13 +105,16 @@ footer {
     color: #111;
     font-family: "新細明體", serif;
     * {
-        // outline: 1px solid red;
+        //// outline: 1px solid red;
     }
     .divider {
         font-family: Lato, 'PingFang TC', 'Helvetica Neue', Helvetica, 微軟正黑體,
             Arial, sans-serif;
     }
     p {
+        &.noflex {
+            display: block;
+        }
         &.attachment, &.bold {
             font-family: Lato, 'PingFang TC', 'Helvetica Neue', Helvetica, 微軟正黑體,
                 Arial, sans-serif;
@@ -128,8 +131,10 @@ footer {
         display:block;
         line-height: 1.65em;
         position: relative;
-        display:flex;
-        // outline:1px solid red;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        //// outline:1px solid red;
         span.num {
             // flex-grow: 1;
             // flex-shrink: 0;
@@ -138,7 +143,7 @@ footer {
             flex-grow: 0;
             flex-shrink: 0;
             flex-basis: auto;
-            margin-right: .5em;
+            // margin-right: 1em;
             white-space: nowrap;
             align-self: flex-start;
         }
@@ -158,11 +163,10 @@ footer {
         }
         span {
             // margin-right: 1em;
-            // outline:1px solid green;
+            //// outline:1px solid green;
         }
-
         &.indent {
-            padding-left:$gutterWidth;
+            padding-left: $gutterWidth;
         }
         &.level_0 {
             span.num {
@@ -171,45 +175,45 @@ footer {
                 flex-basis: auto;
                 white-space: nowrap;
                 align-self: flex-start;
+                float: left;
             }
-            &~.level_1 {
+            .p_content {
+                overflow: hidden;
             }
+            &~.level_1 {}
+            //outline:1px solid red;
         }
         &.level_1 {
             margin-left: 1*$gutterWidth;
+            //outline:1px solid green;
             span.num {
                 flex-grow: 0;
                 flex-shrink: 0;
                 flex-basis: auto;
                 white-space: nowrap;
                 align-self: flex-start;
-
-
+                float: left;
+            }
+            .p_content {
+                overflow: hidden;
             }
         }
         &.level_2 {
-            margin-left: $gutterWidth;
+            margin-left: $gutterWidth + 2em;
+            //outline:1px solid salmon;
             span.num {
                 flex-grow: 0;
                 flex-shrink: 0;
                 flex-basis: auto;
                 white-space: nowrap;
                 align-self: flex-start;
-
+                float: left;
+            }
+            .p_content {
+                overflow: hidden;
             }
         }
         &.level_3 {
-            margin-left: $gutterWidth + 2em;
-            span.num {
-                flex-grow: 0;
-                flex-shrink: 0;
-                flex-basis: auto;
-                white-space: nowrap;
-                align-self: flex-start;
-
-            }
-        }
-        &.level_4 {
             margin-left: $gutterWidth + 4em;
             span.num {
                 flex-grow: 0;
@@ -217,10 +221,13 @@ footer {
                 flex-basis: auto;
                 white-space: nowrap;
                 align-self: flex-start;
-
+                float: left;
+            }
+            .p_content {
+                overflow: hidden;
             }
         }
-        &.level_5 {
+        &.level_4 {
             margin-left: $gutterWidth + 6em;
             span.num {
                 flex-grow: 0;
@@ -228,10 +235,13 @@ footer {
                 flex-basis: auto;
                 white-space: nowrap;
                 align-self: flex-start;
-
+                float: left;
+            }
+            .p_content {
+                overflow: hidden;
             }
         }
-        &.level_6 {
+        &.level_5 {
             margin-left: $gutterWidth + 8em;
             span.num {
                 flex-grow: 0;
@@ -239,10 +249,13 @@ footer {
                 flex-basis: auto;
                 white-space: nowrap;
                 align-self: flex-start;
-
+                float: left;
+            }
+            .p_content {
+                overflow: hidden;
             }
         }
-        &.level_7 {
+        &.level_6 {
             margin-left: $gutterWidth + 10em;
             span.num {
                 flex-grow: 0;
@@ -250,11 +263,149 @@ footer {
                 flex-basis: auto;
                 white-space: nowrap;
                 align-self: flex-start;
-
+                float: left;
+            }
+            .p_content {
+                overflow: hidden;
+            }
+        }
+        &.level_7 {
+            margin-left: $gutterWidth + 12em;
+            span.num {
+                flex-grow: 0;
+                flex-shrink: 0;
+                flex-basis: auto;
+                white-space: nowrap;
+                align-self: flex-start;
+                float: left;
+            }
+            .p_content {
+                overflow: hidden;
+            }
+        }
+        &.line {
+            margin-left: 0;
+            display: block;
+            &.level_0 {
+                span.num {
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    flex-basis: auto;
+                    white-space: nowrap;
+                    align-self: flex-start;
+                    float: left;
+                }
+                &~.level_1 {}
+                //outline:1px solid red;
+                .p_content {
+                    overflow: hidden;
+                }
+            }
+            &.level_1 {
+                margin-left: 1*$gutterWidth + 2em;
+                //outline:1px solid green;
+                span.num {
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    flex-basis: auto;
+                    white-space: nowrap;
+                    align-self: flex-start;
+                    float: left;
+                }
+                .p_content {
+                    overflow: hidden;
+                }
+            }
+            &.level_2 {
+                margin-left: $gutterWidth + 4em;
+                //outline:1px solid salmon;
+                span.num {
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    flex-basis: auto;
+                    white-space: nowrap;
+                    align-self: flex-start;
+                    float: left;
+                }
+                .p_content {
+                    overflow: hidden;
+                }
+            }
+            &.level_3 {
+                margin-left: $gutterWidth + 6em;
+                span.num {
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    flex-basis: auto;
+                    white-space: nowrap;
+                    align-self: flex-start;
+                    float: left;
+                }
+                .p_content {
+                    overflow: hidden;
+                }
+            }
+            &.level_4 {
+                margin-left: $gutterWidth + 8em;
+                span.num {
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    flex-basis: auto;
+                    white-space: nowrap;
+                    align-self: flex-start;
+                    float: left;
+                }
+                .p_content {
+                    overflow: hidden;
+                }
+            }
+            &.level_5 {
+                margin-left: $gutterWidth + 10em;
+                span.num {
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    flex-basis: auto;
+                    white-space: nowrap;
+                    align-self: flex-start;
+                    float: left;
+                }
+                .p_content {
+                    overflow: hidden;
+                }
+            }
+            &.level_6 {
+                margin-left: $gutterWidth + 12em;
+                span.num {
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    flex-basis: auto;
+                    white-space: nowrap;
+                    align-self: flex-start;
+                    float: left;
+                }
+                .p_content {
+                    overflow: hidden;
+                }
+            }
+            &.level_7 {
+                margin-left: $gutterWidth + 14em;
+                span.num {
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    flex-basis: auto;
+                    white-space: nowrap;
+                    align-self: flex-start;
+                    float: left;
+                }
+                .p_content {
+                    overflow: hidden;
+                }
             }
         }
     }
     .information {
+        display: -webkit-box;
+        display: -webkit-flex;
         display: flex;
         flex-flow: row nowrap;
         margin-bottom: 15px;
@@ -263,6 +414,8 @@ footer {
             flex-shrink: 1;
             flex-basis: 30%;
             // min-width:30%;
+            display: -webkit-box;
+            display: -webkit-flex;
             display: flex;
             flex-flow: row wrap;
             align-content: center;
@@ -273,6 +426,8 @@ footer {
                 flex-basis: 15%;
                 min-width: 15%;
                 margin-right: .5em;
+                display: -webkit-box;
+                display: -webkit-flex;
                 display: flex;
                 flex-flow: row wrap;
                 span {
@@ -286,6 +441,8 @@ footer {
                 flex-shrink: 1;
                 flex-basis: auto;
                 min-width: 10%;
+                display: -webkit-box;
+                display: -webkit-flex;
                 display: flex;
                 align-content: center;
                 align-self: center;
@@ -481,6 +638,10 @@ footer {
                     background: #FFF;
                     font-weight: bold;
                     letter-spacing: .05em;
+                    color: #333;
+                    display: block;
+                    text-indent: 0;
+                    margin: 0 0 0 auto;
                 }
                 &:before {
                     position: absolute;
@@ -503,17 +664,28 @@ footer {
         border: 2px solid #000;
         border-left: none;
         border-right: none;
-        display: flex;
+        overflow: hidden;
+        // display: -webkit-box;
+        // display: -webkit-flex;
+        // display: flex;
+        display: block;
         flex-flow: row nowrap;
+        -webkit-flex-flow: row nowrap;
         justify-content: space-between;
+        -webkit-justify-content: space-between;
         h2 {
             width: 250px;
-            flex: 0 1 250px;
-            flex-basis: 250px;
-            font-size: 2rem;
+            // flex: 0 1 250px;
+            // -webkit-flex: 0 1 250px;
+            // flex-basis: 250px;
+            // -webkit-flex-basis: 250px;
+            // font-size: 2rem;
+            float: left;
             margin: .5em 0;
             text-align: justify;
             text-align-last: justify;
+            // -webkit-text-align: justify;
+            // -webkit-text-align-last: justify;
             :after {
                 content: '';
                 width: 100%;
@@ -522,18 +694,30 @@ footer {
         }
         .periodical {
             width: 250px;
-            flex: 0 1 250px;
-            flex-basis: 250px;
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: space-between;
+            // flex: 0 1 250px;
+            // -webkit-flex: 0 1 250px;
+            // flex-basis: 250px;
+            // -webkit-flex-basis: 250px;
+            // display: -webkit-box;
+            // display: -webkit-flex;
+            // display: flex;
+            // flex-flow: row wrap;
+            // -webkit-flex-flow: row wrap;
+            // -webkit-flex-wrap:wrap;
+            // justify-content: space-between;
+            // -webkit-justify-content: space-between;
+            float: right;
             font-size: 1.25rem;
             font-weight: bold;
             align-items: center;
+            -webkit-align-items: center;
             .catelog {
-                flex: 0 1 40%;
+                // flex: 0 1 40%;
+                // -webkit-flex: 0 1 40%;
+                // flex-basis: 40%;
+                // -webkit-flex-basis: 40%;
                 width: 40%;
-                flex-basis: 40%;
+                float: left;
                 padding: .25em 0;
                 text-align: left;
                 span {
@@ -542,20 +726,27 @@ footer {
                 }
             }
             .number {
-                flex: 0 1 40%;
-                width: 40%;
-                flex-basis: 40%;
+                // flex: 0 1 40%;
+                // -webkit-flex: 0 1 40%;
+                // width: 40%;
+                // flex-basis: 40%;
+                // -webkit-flex-basis: 40%;
                 padding: .25em 0;
+                float: right;
                 text-align: right;
                 span {
                     margin: 0 .5em;
                 }
             }
             .date {
-                flex: 0 1 100%;
-                width: 100%;
-                flex-basis: 100%;
+                // flex: 0 1 100%;
+                // -webkit-flex: 0 1 100%;
+                // width: 100%;
+                // flex-basis: 100%;
+                // -webkit-flex-basis: 100%;
                 padding: .25em 0;
+                float: none;
+                clear: both;
                 text-align: justify;
                 text-align-last: justify;
                 span {

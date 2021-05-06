@@ -1,5 +1,5 @@
 @page {
-  margin: 2cm; /*print邊界*/
+  margin: 3cm; /*print邊界*/
     size:210mm 148mm; /*列印紙張大小*/
 }
 @media print {
@@ -136,51 +136,7 @@
     .content {
         padding: 0;
     }
-    .list {
-        ul {
-            li {
-                padding-right: 150px;
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-end;
-                &>span {
-                    background: #FFF !important;
-                    display:inline;
-                }
-                em {
-                    background: #DDD !important;
-                }
-                .page {
-                    left: auto;
-                    right: 0;
-                    background: #FFF !important;
-                    span {
-                        position: relative;
-                        z-index: 2;
-                        padding: 0 1em;
-                        right: -100px;
-                        width:10em;
-                        background: #FFF !important;
-                        font-weight: bold;
-                        letter-spacing: .05em;
-                    }
-                    &:before {
-                        position: absolute;
-                        right: -20em;
-                        bottom: .2em;
-                        z-index: 0;
-                        white-space: nowrap;
-                        letter-spacing: .25em;
-                        max-width: 45em;
-                        left: auto;
-                        overflow: hidden;
-                        display: block;
-                        content: ".................................................................................................................................................";
-                    }
-                }
-            }
-        }
-    }
+
     /* 檔案下載*/
     .file_download {
         a {
@@ -213,38 +169,6 @@
         display: table-header-group;
         /* 表格即使分頁也會顯示表頭 */
     }
-    .lightbox_slider {
-        page-break-inside: avoid;
-        overflow: hidden;
-        height: 6cm;
-        .cp_slider {
-            text-align: center;
-            .slick-slide {
-                width: 30%;
-                height: 4cm;
-                display: inline-block;
-                background: #DEDEDE;
-                position: relative;
-                &:before {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    bottom: 0;
-                    right: 0;
-                    width: 100%;
-                    height: 100%;
-                    box-shadow: 0px 0px 0px 1px #ccc;
-                }
-                img {
-                    width: auto;
-                    height: auto;
-                    max-width: 100%;
-                    max-height: 4cm;
-                    display: inline-block;
-                    vertical-align: middle;
-                }
-            }
-        }
-    }
+    //修正pdf
+
 }
