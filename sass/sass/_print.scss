@@ -1,8 +1,17 @@
 @page {
-  margin: 3cm; /*print邊界*/
-    size:210mm 148mm; /*列印紙張大小*/
+    // margin: 35mm 20mm 25mm 20mm;
+            /*上 35mm 中 20mm 下 25mm 左 20mm*/
+    /*print邊界*/
+    size: A4;
+    margin: 35mm 20mm 25mm 20mm;
+    /*列印紙張大小*/
 }
 @media print {
+    html, body {
+        width: 170mm;
+        height: 200mm;
+        margin:10mm auto;
+    }
     %no-bg {
         background: none;
     }
@@ -40,6 +49,7 @@
     .divider {
         display: none;
     }
+
     /* -------------------------------各別顯示設定----//*/
     body {
         background: transparent;
@@ -48,7 +58,6 @@
         width: auto;
         @extend %no-bg;
         -webkit-print-color-adjust: exact;
-        margin: 0mm 5mm 5mm 5mm;
     }
     header {
         height: 4cm;
@@ -136,7 +145,6 @@
     .content {
         padding: 0;
     }
-
     /* 檔案下載*/
     .file_download {
         a {
@@ -170,5 +178,7 @@
         /* 表格即使分頁也會顯示表頭 */
     }
     //修正pdf
-
+    .lin{
+        padding-left:5mm;
+    }
 }

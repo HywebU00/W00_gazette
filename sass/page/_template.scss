@@ -131,9 +131,9 @@ footer {
         display:block;
         line-height: 1.65em;
         position: relative;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: flex;
+        // display: -webkit-box;
+        // display: -webkit-flex;
+        // display: flex;
         //// outline:1px solid red;
         span.num {
             // flex-grow: 1;
@@ -153,6 +153,7 @@ footer {
             flex-basis: 4em;
             white-space: nowrap;
             align-self: flex-start;
+            float: left;
         }
         span.p_content {
             flex-grow: 1;
@@ -160,6 +161,8 @@ footer {
             flex-basis: 4em;
             display: block;
             align-self: flex-start;
+            overflow: hidden;
+            width: auto;
         }
         span {
             // margin-right: 1em;
@@ -177,9 +180,6 @@ footer {
                 align-self: flex-start;
                 float: left;
             }
-            .p_content {
-                overflow: hidden;
-            }
             &~.level_1 {}
             //outline:1px solid red;
         }
@@ -194,9 +194,6 @@ footer {
                 align-self: flex-start;
                 float: left;
             }
-            .p_content {
-                overflow: hidden;
-            }
         }
         &.level_2 {
             margin-left: $gutterWidth + 2em;
@@ -209,9 +206,6 @@ footer {
                 align-self: flex-start;
                 float: left;
             }
-            .p_content {
-                overflow: hidden;
-            }
         }
         &.level_3 {
             margin-left: $gutterWidth + 4em;
@@ -222,9 +216,6 @@ footer {
                 white-space: nowrap;
                 align-self: flex-start;
                 float: left;
-            }
-            .p_content {
-                overflow: hidden;
             }
         }
         &.level_4 {
@@ -237,9 +228,6 @@ footer {
                 align-self: flex-start;
                 float: left;
             }
-            .p_content {
-                overflow: hidden;
-            }
         }
         &.level_5 {
             margin-left: $gutterWidth + 8em;
@@ -250,9 +238,6 @@ footer {
                 white-space: nowrap;
                 align-self: flex-start;
                 float: left;
-            }
-            .p_content {
-                overflow: hidden;
             }
         }
         &.level_6 {
@@ -265,9 +250,6 @@ footer {
                 align-self: flex-start;
                 float: left;
             }
-            .p_content {
-                overflow: hidden;
-            }
         }
         &.level_7 {
             margin-left: $gutterWidth + 12em;
@@ -278,9 +260,6 @@ footer {
                 white-space: nowrap;
                 align-self: flex-start;
                 float: left;
-            }
-            .p_content {
-                overflow: hidden;
             }
         }
         &.line {
@@ -297,9 +276,6 @@ footer {
                 }
                 &~.level_1 {}
                 //outline:1px solid red;
-                .p_content {
-                    overflow: hidden;
-                }
             }
             &.level_1 {
                 margin-left: 1*$gutterWidth + 2em;
@@ -311,9 +287,6 @@ footer {
                     white-space: nowrap;
                     align-self: flex-start;
                     float: left;
-                }
-                .p_content {
-                    overflow: hidden;
                 }
             }
             &.level_2 {
@@ -327,9 +300,6 @@ footer {
                     align-self: flex-start;
                     float: left;
                 }
-                .p_content {
-                    overflow: hidden;
-                }
             }
             &.level_3 {
                 margin-left: $gutterWidth + 6em;
@@ -340,9 +310,6 @@ footer {
                     white-space: nowrap;
                     align-self: flex-start;
                     float: left;
-                }
-                .p_content {
-                    overflow: hidden;
                 }
             }
             &.level_4 {
@@ -355,9 +322,6 @@ footer {
                     align-self: flex-start;
                     float: left;
                 }
-                .p_content {
-                    overflow: hidden;
-                }
             }
             &.level_5 {
                 margin-left: $gutterWidth + 10em;
@@ -368,9 +332,6 @@ footer {
                     white-space: nowrap;
                     align-self: flex-start;
                     float: left;
-                }
-                .p_content {
-                    overflow: hidden;
                 }
             }
             &.level_6 {
@@ -383,9 +344,6 @@ footer {
                     align-self: flex-start;
                     float: left;
                 }
-                .p_content {
-                    overflow: hidden;
-                }
             }
             &.level_7 {
                 margin-left: $gutterWidth + 14em;
@@ -396,9 +354,6 @@ footer {
                     white-space: nowrap;
                     align-self: flex-start;
                     float: left;
-                }
-                .p_content {
-                    overflow: hidden;
                 }
             }
         }
