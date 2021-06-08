@@ -172,11 +172,11 @@ footer {
             padding-left: $gutterWidth;
         }
         &.line2_indent {
-            text-indent: -1*$gutterWidth;
-            padding-left: $gutterWidth;
+            text-indent: -1em;
+            padding-left: 1em;
             &+.line2_indent {
-                text-indent: -1*$gutterWidth;
-                padding-left:2*$gutterWidth;
+                text-indent: -1em;
+            padding-left: 2em;
             }
         }
         &.level_0 {
