@@ -171,9 +171,13 @@ footer {
         &.indent {
             padding-left: $gutterWidth;
         }
-        &.line2_indent{
+        &.line2_indent {
             text-indent: -1*$gutterWidth;
             padding-left: $gutterWidth;
+            &+.line2_indent {
+                text-indent: -1*$gutterWidth;
+                padding-left:2*$gutterWidth;
+            }
         }
         &.level_0 {
             span.num {
@@ -394,9 +398,9 @@ footer {
                     display: block;
                     width: 100%;
                     white-space: nowrap;
-                    a{
+                    a {
                         margin-right: .5em;
-                        white-space:nowrap;
+                        white-space: nowrap;
                     }
                 }
             }
