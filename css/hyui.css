@@ -2585,11 +2585,11 @@ footer {
     .content p.indent {
       padding-left: 3em; }
     .content p.line2_indent {
-      text-indent: -1em;
-      padding-left: 1em; }
+      text-indent: -3em;
+      padding-left: 3em; }
       .content p.line2_indent + .line2_indent {
-        text-indent: -1em;
-        padding-left: 2em; }
+        text-indent: -2em;
+        padding-left: 3em; }
     .content p.level_0 span.num {
       flex-grow: 0;
       flex-shrink: 0;
