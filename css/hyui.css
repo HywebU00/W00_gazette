@@ -2584,6 +2584,9 @@ footer {
       width: auto; }
     .content p.indent {
       padding-left: 3em; }
+    .content p.line2_indent {
+      text-indent: -3em;
+      padding-left: 3em; }
     .content p.level_0 span.num {
       flex-grow: 0;
       flex-shrink: 0;

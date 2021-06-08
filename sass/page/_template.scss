@@ -171,6 +171,10 @@ footer {
         &.indent {
             padding-left: $gutterWidth;
         }
+        &.line2_indent{
+            text-indent: -1*$gutterWidth;
+            padding-left: $gutterWidth;
+        }
         &.level_0 {
             span.num {
                 flex-grow: 0;
