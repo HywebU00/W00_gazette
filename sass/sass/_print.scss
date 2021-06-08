@@ -7,6 +7,9 @@
     /*列印紙張大小*/
 }
 @media print {
+    *{
+        box-shadow:none !important;
+    }
     html, body {
         width: 170mm;
         height: 200mm;
@@ -69,6 +72,7 @@
     }
     .wrapper {
         width: auto;
+        box-shadow:none;
     }
     .container {
         margin: 0px auto;

@@ -2740,23 +2740,23 @@ footer {
       display: -webkit-box;
       display: -webkit-flex;
       display: flex;
-      flex-flow: row wrap;
+      flex-flow: row nowrap;
       align-content: center;
-      margin-right: 1em; }
+      margin-right: 1em;
+      align-self: flex-start; }
       .content .information .dept .from {
         flex-grow: 0;
         flex-shrink: 1;
-        flex-basis: 15%;
-        min-width: 15%;
-        margin-right: .5em;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: flex;
-        flex-flow: row wrap; }
+        flex-basis: auto;
+        min-width: auto;
+        margin-right: .5em; }
         .content .information .dept .from span {
           display: block;
           width: 100%;
           white-space: nowrap; }
+          .content .information .dept .from span a {
+            margin-right: .5em;
+            white-space: nowrap; }
       .content .information .dept .lin {
         flex-grow: 1;
         flex-shrink: 1;
@@ -3029,6 +3029,9 @@ footer {
   margin: 35mm 20mm 25mm 20mm;
   /*列印紙張大小*/ }
 @media print {
+  * {
+    box-shadow: none !important; }
+
   html, body {
     width: 170mm;
     height: 200mm;
@@ -3087,7 +3090,8 @@ footer {
       max-width: 7cm; }
 
   .wrapper {
-    width: auto; }
+    width: auto;
+    box-shadow: none; }
 
   .container {
     margin: 0px auto;

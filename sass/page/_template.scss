@@ -372,23 +372,28 @@ footer {
             display: -webkit-box;
             display: -webkit-flex;
             display: flex;
-            flex-flow: row wrap;
+            flex-flow: row nowrap;
             align-content: center;
             margin-right: 1em;
+            align-self: flex-start;
             .from {
                 flex-grow: 0;
                 flex-shrink: 1;
-                flex-basis: 15%;
-                min-width: 15%;
+                flex-basis: auto;
+                min-width: auto;
                 margin-right: .5em;
-                display: -webkit-box;
-                display: -webkit-flex;
-                display: flex;
-                flex-flow: row wrap;
+                // display: -webkit-box;
+                // display: -webkit-flex;
+                // display: flex;
+                // flex-flow: row wrap;
                 span {
                     display: block;
                     width: 100%;
                     white-space: nowrap;
+                    a{
+                        margin-right: .5em;
+                        white-space:nowrap;
+                    }
                 }
             }
             .lin {
