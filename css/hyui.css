@@ -2669,7 +2669,8 @@ footer {
         flex-basis: auto;
         white-space: nowrap;
         align-self: flex-start;
-        float: left; }
+        float: left;
+        min-width: 5em; }
       .content p.line.level_1 {
         margin-left: 5em; }
         .content p.line.level_1 span.num {

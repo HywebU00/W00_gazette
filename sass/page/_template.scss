@@ -281,6 +281,8 @@ footer {
                     white-space: nowrap;
                     align-self: flex-start;
                     float: left;
+            min-width:5em;
+                    
                 }
                 &~.level_1 {}
                 //outline:1px solid red;
