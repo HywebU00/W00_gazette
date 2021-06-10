@@ -2565,15 +2565,18 @@ footer {
       flex-grow: 0;
       flex-shrink: 0;
       flex-basis: auto;
-      white-space: nowrap;
+      white-space: normal;
       align-self: flex-start;
+      float: left;
+      min-width: 5em;
       text-align: justify;
-      text-align-last: justify;
-      display: inline-block; }
-      .content p span.num :after {
-        content: "";
+      text-align-last: justify; }
+      .content p span.num:after {
         display: inline-block;
-        width: 100%; }
+        content: '';
+        width: 100%;
+        height: 0;
+        overflow: hidden; }
     .content p span.title {
       flex-grow: 0;
       flex-shrink: 0;
@@ -2612,7 +2615,8 @@ footer {
         flex-basis: auto;
         white-space: nowrap;
         align-self: flex-start;
-        float: left; }
+        float: left;
+        min-width: auto; }
     .content p.level_2 {
       margin-left: 5em; }
       .content p.level_2 span.num {
@@ -2621,7 +2625,8 @@ footer {
         flex-basis: auto;
         white-space: nowrap;
         align-self: flex-start;
-        float: left; }
+        float: left;
+        min-width: auto; }
     .content p.level_3 {
       margin-left: 7em; }
       .content p.level_3 span.num {
@@ -2630,7 +2635,8 @@ footer {
         flex-basis: auto;
         white-space: nowrap;
         align-self: flex-start;
-        float: left; }
+        float: left;
+        min-width: auto; }
     .content p.level_4 {
       margin-left: 9em; }
       .content p.level_4 span.num {
@@ -2639,7 +2645,8 @@ footer {
         flex-basis: auto;
         white-space: nowrap;
         align-self: flex-start;
-        float: left; }
+        float: left;
+        min-width: auto; }
     .content p.level_5 {
       margin-left: 11em; }
       .content p.level_5 span.num {
@@ -2648,7 +2655,8 @@ footer {
         flex-basis: auto;
         white-space: nowrap;
         align-self: flex-start;
-        float: left; }
+        float: left;
+        min-width: auto; }
     .content p.level_6 {
       margin-left: 13em; }
       .content p.level_6 span.num {
@@ -2657,7 +2665,8 @@ footer {
         flex-basis: auto;
         white-space: nowrap;
         align-self: flex-start;
-        float: left; }
+        float: left;
+        min-width: auto; }
     .content p.level_7 {
       margin-left: 15em; }
       .content p.level_7 span.num {
@@ -2666,7 +2675,8 @@ footer {
         flex-basis: auto;
         white-space: nowrap;
         align-self: flex-start;
-        float: left; }
+        float: left;
+        min-width: auto; }
     .content p.line {
       margin-left: 0;
       display: block; }
@@ -2694,7 +2704,8 @@ footer {
           flex-basis: auto;
           white-space: nowrap;
           align-self: flex-start;
-          float: left; }
+          float: left;
+          min-width: auto; }
       .content p.line.level_2 {
         margin-left: 7em; }
         .content p.line.level_2 span.num {
@@ -2703,7 +2714,8 @@ footer {
           flex-basis: auto;
           white-space: nowrap;
           align-self: flex-start;
-          float: left; }
+          float: left;
+          min-width: auto; }
       .content p.line.level_3 {
         margin-left: 9em; }
         .content p.line.level_3 span.num {
@@ -2712,7 +2724,8 @@ footer {
           flex-basis: auto;
           white-space: nowrap;
           align-self: flex-start;
-          float: left; }
+          float: left;
+          min-width: auto; }
       .content p.line.level_4 {
         margin-left: 11em; }
         .content p.line.level_4 span.num {
@@ -2721,7 +2734,8 @@ footer {
           flex-basis: auto;
           white-space: nowrap;
           align-self: flex-start;
-          float: left; }
+          float: left;
+          min-width: auto; }
       .content p.line.level_5 {
         margin-left: 13em; }
         .content p.line.level_5 span.num {
@@ -2730,7 +2744,8 @@ footer {
           flex-basis: auto;
           white-space: nowrap;
           align-self: flex-start;
-          float: left; }
+          float: left;
+          min-width: auto; }
       .content p.line.level_6 {
         margin-left: 15em; }
         .content p.line.level_6 span.num {
@@ -2739,7 +2754,8 @@ footer {
           flex-basis: auto;
           white-space: nowrap;
           align-self: flex-start;
-          float: left; }
+          float: left;
+          min-width: auto; }
       .content p.line.level_7 {
         margin-left: 17em; }
         .content p.line.level_7 span.num {
@@ -2748,7 +2764,8 @@ footer {
           flex-basis: auto;
           white-space: nowrap;
           align-self: flex-start;
-          float: left; }
+          float: left;
+          min-width: auto; }
   .content .information {
     display: -webkit-box;
     display: -webkit-flex;
