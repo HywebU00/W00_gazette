@@ -1,14 +1,18 @@
 $gutterWidth:3em;
+
 * {
     box-sizing: border-box;
 }
+
 html {
     scroll-behavior: smooth;
     background: #F5F5F5;
+
     @include screen('mobile') {
         background: #FFF;
     }
 }
+
 .gotoTop {
     display: block;
     width: 3rem;
@@ -25,11 +29,14 @@ html {
     transition: .3s ease-out;
     font-family: Lato, 'PingFang TC', 'Helvetica Neue', Helvetica, 微軟正黑體,
         Arial, sans-serif;
-    &:hover, &:focus {
+
+    &:hover,
+    &:focus {
         background: rgba(0, 0, 0, .5);
         color: #FFF;
     }
 }
+
 body {
     &.noscroll {
         position: static !important;
@@ -41,6 +48,7 @@ body {
         padding: 0;
     }
 }
+
 // 最外圍預設為100%
 .wrapper {
     font-size: 16px;
@@ -50,28 +58,33 @@ body {
     overflow-y: auto;
     background: #FFF;
     box-shadow: 0px 0px 45px rgba(0, 0, 0, .1);
+
     @include screen('mobile') {
         background: #000;
         overflow: hidden;
         overflow-y: auto;
     }
 }
+
 header {
     background: url(../images/header_bg.jpg) no-repeat right center #FFF;
     height: 10em;
     border-top: 8px solid #222;
     padding-top: 1em;
     position: relative;
+
     h1 {
         margin: 0;
         position: absolute;
         top: 16px;
         left: 16px;
         max-width: 320px;
+
         img {
             width: 100%;
         }
     }
+
     .slogan {
         position: absolute;
         top: 60%;
@@ -79,6 +92,7 @@ header {
         font-size: 13px;
         color: #555;
     }
+
     p {
         position: absolute;
         bottom: 0px;
@@ -89,13 +103,16 @@ header {
         color: darken($primaryColor, 10);
     }
 }
+
 footer {
     background: #e0e0e0;
     padding: 1em;
+
     p {
         font-size: .813rem;
     }
 }
+
 .content {
     background: #FFF;
     min-height: 600px;
@@ -104,26 +121,33 @@ footer {
     padding-bottom: 3em;
     color: #111;
     font-family: "新細明體", serif;
+
     * {
         //// outline: 1px solid red;
     }
+
     .divider {
         font-family: Lato, 'PingFang TC', 'Helvetica Neue', Helvetica, 微軟正黑體,
             Arial, sans-serif;
     }
+
     p {
         &.noflex {
             display: block;
         }
-        &.attachment, &.bold {
+
+        &.attachment,
+        &.bold {
             font-family: Lato, 'PingFang TC', 'Helvetica Neue', Helvetica, 微軟正黑體,
                 Arial, sans-serif;
             font-weight: bold;
         }
+
         &.right {
             text-align: right;
             justify-content: flex-end;
         }
+
         justify-content: flex-start;
         margin-top: 0;
         margin-bottom:.4em;
@@ -131,6 +155,7 @@ footer {
         display:block;
         line-height: 1.65em;
         position: relative;
+
         // display: -webkit-box;
         // display: -webkit-flex;
         // display: flex;
@@ -146,7 +171,18 @@ footer {
             // margin-right: 1em;
             white-space: nowrap;
             align-self: flex-start;
+            text-align: justify;
+            text-align-last: justify;
+
+            &:after {
+                display: inline-block;
+                content: '';
+                width: 100%;
+                height: 0;
+                overflow: hidden;
+            }
         }
+
         span.title {
             flex-grow: 0;
             flex-shrink: 0;
@@ -155,6 +191,7 @@ footer {
             align-self: flex-start;
             float: left;
         }
+
         span.p_content {
             flex-grow: 1;
             flex-shrink: 0;
@@ -164,21 +201,26 @@ footer {
             overflow: hidden;
             width: auto;
         }
+
         span {
             // margin-right: 1em;
             //// outline:1px solid green;
         }
+
         &.indent {
             padding-left: $gutterWidth;
         }
+
         &.line2_indent {
             text-indent: -3em;
             padding-left: 3em;
+
             &+.line2_indent {
                 text-indent: -2em;
                 padding-left: 3em;
             }
         }
+
         &.level_0 {
             span.num {
                 flex-grow: 0;
@@ -188,11 +230,15 @@ footer {
                 align-self: flex-start;
                 float: left;
             }
+
             &~.level_1 {}
+
             //outline:1px solid red;
         }
+
         &.level_1 {
             margin-left: 1*$gutterWidth;
+
             //outline:1px solid green;
             span.num {
                 flex-grow: 0;
@@ -203,8 +249,10 @@ footer {
                 float: left;
             }
         }
+
         &.level_2 {
             margin-left: $gutterWidth + 2em;
+
             //outline:1px solid salmon;
             span.num {
                 flex-grow: 0;
@@ -215,8 +263,10 @@ footer {
                 float: left;
             }
         }
+
         &.level_3 {
             margin-left: $gutterWidth + 4em;
+
             span.num {
                 flex-grow: 0;
                 flex-shrink: 0;
@@ -226,8 +276,10 @@ footer {
                 float: left;
             }
         }
+
         &.level_4 {
             margin-left: $gutterWidth + 6em;
+
             span.num {
                 flex-grow: 0;
                 flex-shrink: 0;
@@ -237,8 +289,10 @@ footer {
                 float: left;
             }
         }
+
         &.level_5 {
             margin-left: $gutterWidth + 8em;
+
             span.num {
                 flex-grow: 0;
                 flex-shrink: 0;
@@ -248,8 +302,10 @@ footer {
                 float: left;
             }
         }
+
         &.level_6 {
             margin-left: $gutterWidth + 10em;
+
             span.num {
                 flex-grow: 0;
                 flex-shrink: 0;
@@ -259,8 +315,10 @@ footer {
                 float: left;
             }
         }
+
         &.level_7 {
             margin-left: $gutterWidth + 12em;
+
             span.num {
                 flex-grow: 0;
                 flex-shrink: 0;
@@ -270,9 +328,11 @@ footer {
                 float: left;
             }
         }
+
         &.line {
             margin-left: 0;
             display: block;
+
             &.level_0 {
                 span.num {
                     flex-grow: 0;
@@ -281,14 +341,28 @@ footer {
                     white-space: nowrap;
                     align-self: flex-start;
                     float: left;
-            min-width:5em;
-                    
+                    min-width: 5em;
+                    text-align: justify;
+                    text-align-last: justify;
+
+                    &:after {
+                        display: inline-block;
+                        content: '';
+                        width: 100%;
+                        height: 0;
+                        overflow: hidden;
+                    }
+
                 }
+
                 &~.level_1 {}
+
                 //outline:1px solid red;
             }
+
             &.level_1 {
                 margin-left: 1*$gutterWidth + 2em;
+
                 //outline:1px solid green;
                 span.num {
                     flex-grow: 0;
@@ -299,8 +373,10 @@ footer {
                     float: left;
                 }
             }
+
             &.level_2 {
                 margin-left: $gutterWidth + 4em;
+
                 //outline:1px solid salmon;
                 span.num {
                     flex-grow: 0;
@@ -311,8 +387,10 @@ footer {
                     float: left;
                 }
             }
+
             &.level_3 {
                 margin-left: $gutterWidth + 6em;
+
                 span.num {
                     flex-grow: 0;
                     flex-shrink: 0;
@@ -322,8 +400,10 @@ footer {
                     float: left;
                 }
             }
+
             &.level_4 {
                 margin-left: $gutterWidth + 8em;
+
                 span.num {
                     flex-grow: 0;
                     flex-shrink: 0;
@@ -333,8 +413,10 @@ footer {
                     float: left;
                 }
             }
+
             &.level_5 {
                 margin-left: $gutterWidth + 10em;
+
                 span.num {
                     flex-grow: 0;
                     flex-shrink: 0;
@@ -344,8 +426,10 @@ footer {
                     float: left;
                 }
             }
+
             &.level_6 {
                 margin-left: $gutterWidth + 12em;
+
                 span.num {
                     flex-grow: 0;
                     flex-shrink: 0;
@@ -355,8 +439,10 @@ footer {
                     float: left;
                 }
             }
+
             &.level_7 {
                 margin-left: $gutterWidth + 14em;
+
                 span.num {
                     flex-grow: 0;
                     flex-shrink: 0;
@@ -368,12 +454,14 @@ footer {
             }
         }
     }
+
     .information {
         display: -webkit-box;
         display: -webkit-flex;
         display: flex;
         flex-flow: row nowrap;
         margin-bottom: 15px;
+
         .dept {
             flex-grow: 0;
             flex-shrink: 1;
@@ -386,12 +474,14 @@ footer {
             align-content: center;
             margin-right: 1em;
             align-self: flex-start;
+
             .from {
                 flex-grow: 0;
                 flex-shrink: 1;
                 flex-basis: auto;
                 min-width: auto;
                 margin-right: .5em;
+
                 // display: -webkit-box;
                 // display: -webkit-flex;
                 // display: flex;
@@ -400,12 +490,14 @@ footer {
                     display: block;
                     width: 100%;
                     white-space: nowrap;
+
                     a {
                         margin-right: .5em;
                         white-space: nowrap;
                     }
                 }
             }
+
             .lin {
                 flex-grow: 1;
                 flex-shrink: 1;
@@ -416,16 +508,19 @@ footer {
                 display: flex;
                 align-content: center;
                 align-self: center;
+
                 span {
                     margin: auto 0;
                 }
             }
         }
+
         .announcement {
             flex-grow: 0;
             flex-shrink: 1;
             flex-basis: 40%;
             min-width: 40%;
+
             span {
                 display: block;
                 white-space: nowrap;
@@ -433,80 +528,101 @@ footer {
         }
     }
 }
+
 // 整體共用container樣式，請注意首頁切版頁面的整齊
 .container {
     padding: 0;
     margin: 0 auto;
     max-width: $container-max; //請看_variable.scss
     @include gutter(3em);
+
     @include screen('mobile') {
         @include gutter(0);
     }
 }
+
 .main {
     position: relative;
     margin: 0 auto;
     padding: 0;
     padding-top: 100px;
+
     // 可先設定一個中央區塊最大寬，限制accesskey對齊
     @include screen('tablet') {
         padding-top: 60px;
     }
+
     h2 {
         line-height: 1.25em;
     }
+
     &.small_size {
         font-size: .938em;
     }
+
     &.large_size {
         font-size: 1.125em;
     }
 }
+
 ////////////////////////////////////////////////////////////
 // 為了與首頁區隔，請在內頁加上innerpage ClassName
 .innerpage {
     padding-top: 6em;
+
     @include screen('tablet') {
         padding-top: 60px;
         background: #FFF;
     }
+
     >.container {
         max-width: 100%;
         @include gutter(0); //gutter 代表左右要留白
+
         &>* {
             max-width: $container-max;
             margin: 0 auto;
             @include gutter;
         }
     }
-    .inner_img, .feature_img {
+
+    .inner_img,
+    .feature_img {
         height: 150px;
         width: 100%;
         margin-bottom: 1em;
+
         @include screen('xs_mobile') {
             height: 120px;
         }
+
         img {
             width: 100%;
             height: 150px;
             object-fit: cover;
+
             @include screen('xs_mobile') {
                 height: 120px;
             }
         }
     }
+
     .feature_img {
         height: 400px;
+
         @include screen('xs_mobile') {
             height: 400px;
         }
+
         img {
             height: 400px;
+
             @include screen('xs_mobile') {
                 height: 400px;
             }
         }
     }
+
     h2.title {
         color: #222;
         text-align: center;
@@ -515,24 +631,29 @@ footer {
         line-height: 1.2;
         position: relative;
         margin: .5em auto 1em;
+
         a.collect {
             display: inline-block;
             width: 2rem;
             height: 2rem;
             margin-left: .5rem;
+
             @include screen('xs_mobile') {
                 width: 1.5rem;
                 height: 1.5rem;
             }
+
             img {
                 width: 100%;
             }
         }
+
         @include screen('mobile') {
             font-size: 2.5rem;
             width: 90%;
             margin-bottom: 1rem;
         }
+
         &:before {
             content: "";
             width: 12px;
@@ -543,6 +664,7 @@ footer {
             margin-right: .2em;
             display: inline-block;
         }
+
         small {
             display: block;
             font-size: .875rem;
@@ -551,12 +673,14 @@ footer {
             line-height: 1.5;
             color: #888;
             max-width: 800px;
+
             @include screen('mobile') {
                 font-size: .875rem;
             }
         }
     }
 }
+
 // 目錄
 .list {
     font-family: serif, PMingLiU, 新細明體;
@@ -564,14 +688,18 @@ footer {
     display: block;
     overflow: hidden;
     padding-bottom: 2em;
+
     h2 {
         font-size: 2em;
     }
+
     h3 {
         font-size: 1.5rem;
     }
+
     ul {
         padding-left: 0;
+
         li {
             display: block;
             position: relative;
@@ -579,10 +707,12 @@ footer {
             text-indent: -6em;
             padding-left: 6em;
             margin-bottom: .5em;
+
             &>span {
                 background: #FFF;
                 position: relative;
                 z-index: 2;
+
                 em {
                     vertical-align: middle;
                     background: #DDD;
@@ -590,17 +720,20 @@ footer {
                     position: relative;
                     top: -.1em;
                 }
+
                 &:after {
                     content: "";
                     display: inline-block;
                     margin-left: 1em;
                 }
             }
+
             .page {
                 position: absolute;
                 bottom: 0;
                 right: 0;
                 background: #FFF;
+
                 span {
                     position: relative;
                     z-index: 2;
@@ -613,6 +746,7 @@ footer {
                     text-indent: 0;
                     margin: 0 0 0 auto;
                 }
+
                 &:before {
                     position: absolute;
                     z-index: 1;
@@ -629,6 +763,7 @@ footer {
             }
         }
     }
+
     .head {
         padding: .5em 0;
         border: 2px solid #000;
@@ -643,6 +778,7 @@ footer {
         -webkit-flex-flow: row nowrap;
         justify-content: space-between;
         -webkit-justify-content: space-between;
+
         h2 {
             width: 250px;
             // flex: 0 1 250px;
@@ -654,6 +790,7 @@ footer {
             margin: .5em 0;
             text-align: justify;
             text-align-last: justify;
+
             // -webkit-text-align: justify;
             // -webkit-text-align-last: justify;
             :after {
@@ -662,6 +799,7 @@ footer {
                 display: inline-block;
             }
         }
+
         .periodical {
             width: 250px;
             // flex: 0 1 250px;
@@ -681,6 +819,7 @@ footer {
             font-weight: bold;
             align-items: center;
             -webkit-align-items: center;
+
             .catelog {
                 // flex: 0 1 40%;
                 // -webkit-flex: 0 1 40%;
@@ -690,11 +829,13 @@ footer {
                 float: left;
                 padding: .25em 0;
                 text-align: left;
+
                 span {
                     display: inline-block;
                     margin: 0 .5em;
                 }
             }
+
             .number {
                 // flex: 0 1 40%;
                 // -webkit-flex: 0 1 40%;
@@ -704,10 +845,12 @@ footer {
                 padding: .25em 0;
                 float: right;
                 text-align: right;
+
                 span {
                     margin: 0 .5em;
                 }
             }
+
             .date {
                 // flex: 0 1 100%;
                 // -webkit-flex: 0 1 100%;
@@ -719,6 +862,7 @@ footer {
                 clear: both;
                 text-align: justify;
                 text-align-last: justify;
+
                 span {
                     display: inline-block;
                     margin: 0 .25em;
